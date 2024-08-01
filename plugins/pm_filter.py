@@ -40,7 +40,7 @@ async def give_filter(client, message):
 async def next_page(bot, query):
     ident, req, key, offset = query.data.split("_")
     if int(req) not in [query.from_user.id, 0]:
-        return await query.answer("oKda", show_alert=True)
+        return await query.answer("Hey 👋 This query wasn't of yours, kindly ask your query and play with that buttons please..!!", show_alert=True)
     try:
         offset = int(offset)
     except:
@@ -97,12 +97,7 @@ async def next_page(bot, query):
     elif off_set is None:
         btn.insert(0,
             [
-                InlineKeyboardButton("Updates", url="https://t.me/VJ_Botz"),
-            ]
-        )
-        btn.insert(1,
-            [
-                InlineKeyboardButton("🍿 YouTube Channel 🍿", url="https://youtube.com/@Tech_VJ"),
+                InlineKeyboardButton("⚜️ ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ ⚜️", url="https://t.me/MoviEsBizzMalaYalaM_HD"),
             ]
         )
         btn.append(
@@ -129,7 +124,7 @@ async def next_page(bot, query):
 async def advantage_spoll_choker(bot, query):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
-        return await query.answer("okDa", show_alert=True)
+        return await query.answer("Hey 👋 This query wasn't of yours, kindly ask your query and play with that buttons please..!!", show_alert=True)
     if movie_ == "close_spellcheck":
         return await query.message.delete()
     movies = SPELL_CHECK.get(query.message.reply_to_message.id)
@@ -144,7 +139,7 @@ async def advantage_spoll_choker(bot, query):
             k = (movie, files, offset, total_results)
             await auto_filter(bot, query, k)
         else:
-            k = await query.message.edit("<b>📍 Movie Not available Reasons\n\n<i>1) O.T.T Or DVD Not Released\n\n2) Type Name With Year</i> \n\n3) Movie Is Not Available in the database Say In Our Other Group To Get This Movies\n\n<a href='https://t.me/Group_Linkzzzz'>Our Groups</a></b>")
+            k = await query.message.edit("<b>📍 Movie Not available Reasons\n\n<i>1) O.T.T Or DVD Not Released\n\n2) Type Name With Year</i> \n\n3) Movie Is Not Available in the database.. inform to the admin to get the movie\n\n<a href='https://t.me/moviesbizz_yt'>ADMIN 1🥇</a>\n<a href='https://t.me/jackFernandez_yt'>ADMIN 2🥈</a></b>")
             await asyncio.sleep(10)
             await k.delete()
 
@@ -166,20 +161,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('Piracy Is Crime')
+                    return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
                     quote=True
                 )
-                return await query.answer('Piracy Is Crime')
+                return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -233,7 +228,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -254,7 +249,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -277,7 +272,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -295,7 +290,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('Piracy Is Crime')
+        return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
     elif query.data == "backcb":
         await query.answer()
 
@@ -306,7 +301,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
         buttons = []
         for groupid in groupids:
             try:
@@ -413,12 +408,13 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer()
     elif query.data == "start":
         buttons = [[
-            InlineKeyboardButton('💝 Subscribe YouTube Channel 💗', url=f'http://youtube.com/@Tech_VJ')
+            InlineKeyboardButton('❣️ Use Group To Get Movies ❣️', url='https://t.me/MoviesBizzChat')
             ],[
-            InlineKeyboardButton('♻️ Update Channel ♻️', url=f'https://t.me/VJ_Botz')
+            InlineKeyboardButton('🔍 Search', switch_inline_query_current_chat=''),
+            InlineKeyboardButton('🦋CHANNEL', url='https://t.me/MoviEsBizzMalaYalaM_HD')
             ],[
-            InlineKeyboardButton('ℹ️ 𝙷𝚎𝚕𝚙', callback_data='help'),
-            InlineKeyboardButton('😊 𝙰𝚋𝚘𝚞𝚝', callback_data='about')
+            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
+            InlineKeyboardButton('😊 About', callback_data='about')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -426,7 +422,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-        await query.answer('Piracy Is Crime')
+        await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
@@ -446,8 +442,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons = [[
+            InlineKeyboardButton('🦋CHANNEL', url='https://t.me/MoviEsBizzMalaYalaM_HD'),
             InlineKeyboardButton('♥️ Source', callback_data='source')
-        ], [
+            ],[
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
         ]]
@@ -572,7 +569,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if str(grp_id) != str(grpid):
             await query.message.edit("Your Active Connection Has Been Changed. Go To /settings.")
-            return await query.answer('Piracy Is Crime')
+            return await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
 
         if status == "True":
             await save_group_settings(grpid, set_type, False)
@@ -619,7 +616,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             ]
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('Piracy Is Crime')
+    await query.answer('ᴘʀᴏᴄᴇꜱꜱɪɴɢ...!!')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -667,17 +664,6 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-
-    btn.insert(0,
-        [
-            InlineKeyboardButton("Update Channel", url="https://t.me/VJ_Botz"),
-        ]
-    )
-    btn.insert(1,
-        [
-            InlineKeyboardButton("YouTube Channel", url="https://youtube.com/@Tech_VJ"),
-        ]
-    )
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
@@ -753,7 +739,7 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("<b>I couldn't find anything in than name.\n\n<a href='https://t.me/Group_Linkzzzz'>Check in our other groups</a></b>")
+        k = await msg.reply("<b>⚠️ ɪ ᴄᴏᴜʟᴅɴ'ᴛ ꜰɪɴᴅ ᴀɴʏᴛʜɪɴɢ ɪɴ ᴛʜᴀᴛ ɴᴀᴍᴇ.\n\n<a href='https://www.google.com'>ᴘʟᴇᴀꜱᴇ ᴄʜᴇᴄᴋ ᴛʜᴇ ꜱᴘᴇʟʟɪɴɢ<a></b>")
         await asyncio.sleep(8)
         await k.delete()
         return
