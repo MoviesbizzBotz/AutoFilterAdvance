@@ -26,7 +26,7 @@ async def answer(bot, query: InlineQuery):
     if not await inline_users(query):
         await query.answer(results=[],
                            cache_time=0,
-                           switch_pm_text='okDa',
+                           switch_pm_text='ꜱᴏʀʀʏ, ʏᴏᴜ ʜᴀᴠᴇ ɴᴏ ᴘᴇʀᴍɪꜱꜱɪᴏɴ ᴛᴏ ᴜꜱᴇ ᴛʜɪꜱ ꜰᴇᴀᴛᴜʀᴇ',
                            switch_pm_parameter="hehe")
         return
 
@@ -108,5 +108,3 @@ def get_reply_markup(query):
         ]
         ]
     return InlineKeyboardMarkup(buttons)
-
-
